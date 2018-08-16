@@ -8,10 +8,10 @@
 </template>
 
 <script>
-  export default {
-    name: 'PopupPage',
-    props: ['label'],
-  };
+export default {
+  name: 'PopupPage',
+  props: ['label']
+}
 </script>
 
 <style scoped>

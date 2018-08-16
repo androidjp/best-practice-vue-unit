@@ -12,40 +12,40 @@
 </template>
 
 <script>
-  import login from './../service/login.js';
-  import PopupPage from './PopupPage';
-  export default {
-    components:{PopupPage},
-    data() {
-      return {
-        name: null,
-        password: null,
-        callback: {}
-      };
-    },
-    methods: {
-      startLogin() {
-        login(this.name, this.password, (res, err) => {
-          if (err) {
-            // alert('Oh no! ' + err)
-            this.callback = {
-              from : err,
-              to : err
-            }
-          } else {
-            // alert('Result: ' + res['message'])
-            this.callback = {
-              from : res['message'],
-              to : res['message']
-            }
-          }
-        });
-    },
-    add(a, b) {
-      return a + b;
-      }
+import login from './../service/login.js'
+import PopupPage from './PopupPage'
+export default {
+  components: {PopupPage},
+  data () {
+    return {
+      name: null,
+      password: null,
+      callback: {}
     }
-  };
+  },
+  methods: {
+    startLogin () {
+      login(this.name, this.password, (res, err) => {
+        if (err) {
+          // alert('Oh no! ' + err)
+          this.callback = {
+            from: err,
+            to: err
+          }
+        } else {
+          // alert('Result: ' + res['message'])
+          this.callback = {
+            from: res['message'],
+            to: res['message']
+          }
+        }
+      })
+    },
+    add (a, b) {
+      return a + b
+    }
+  }
+}
 </script>
 
 <style scoped>
@@ -53,4 +53,3 @@
     margin: 12px;
   }
 </style>
-
